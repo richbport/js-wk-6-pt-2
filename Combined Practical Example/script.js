@@ -15,7 +15,7 @@ async function fetchData() {
        const cachedData = localStorage.getItem("cachedPost");    
        const cachedTime = localStorage.getItem("cachedTime");
 
-       const cachedExpiry = 
+       const cachedExpiry = 5 * 60 * 1000; // 5 minutes
 
     } catch {}
 }
