@@ -7,9 +7,11 @@
 //   localStorage.setItem(key, JSON.stringify(item));
 // }
 
+// Function to store data in localStorage with TTL
 function setCache(key, value, ttl) {
     const item = {
         value: value,
-        expiry: Date.now() + ttl,
-    }
+        expiry: Date.now() + ttl, // Set expiry time
+    };
+    localStorage.setItem(key, JSON.stringify(item));
 }
