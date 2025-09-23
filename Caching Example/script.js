@@ -8,5 +8,8 @@
 // }
 
 function setCache(key, value, ttl) {
-    
+    const item = {
+        value: value,
+        expiry: Date.now() + ttl,
+    }
 }
