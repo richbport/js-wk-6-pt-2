@@ -31,5 +31,9 @@ const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 // check cache before fetching new data
 const cachedData = getCache(CACHE_KEY);
 if (cachedData) {
-  console.log("Using cached data:" cachedData);
+  console.log("Using cached data:", cachedData);
+} else {
+  console.log("Fetching new data...");
+  const data = { message: "Hello, this is new data!" };
+  setCache(CACHE_KEY, data, CACHE_TTL);
 }
