@@ -27,3 +27,9 @@
 // Example usage:
 const CACHE_KEY = 'cachedData';
 const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
+// check cache before fetching new data
+const cachedData = getCache(CACHE_KEY);
+if (cachedData) {
+  console.log("Using cached data:" cachedData);
+}
