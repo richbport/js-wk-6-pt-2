@@ -8,22 +8,27 @@
 // }
 
 // Function to retrieve data from localStorage if ttl hasn't expired
-function getCache(key) {
-    const itemStr = localStorage.getItem(key);
-    if (!itemStr) {
-        return null;
-    }
+// function getCache(key) {
+//     const itemStr = localStorage.getItem(key);
+//     if (!itemStr) {
+//         return null;
+//     }
 
-const item = JSON.parse(itemStr);
+// const item = JSON.parse(itemStr);
 
-// Check if the cache item is expired
-if (Date.now() > item.expiry) {
-    localStorage.removeItem(key);
-    return null;
-}
-return item.value;
-}
+// // Check if the cache item is expired
+// if (Date.now() > item.expiry) {
+//     localStorage.removeItem(key);
+//     return null;
+// }
+// return item.value;
+// }
 
 function getCache(key) {
   const itemStr = localStorage.getItem(key);
+  if (!itemStr) {
+    return null;
+  }
 }
+
+const item = JSON.parse(itemStr);
