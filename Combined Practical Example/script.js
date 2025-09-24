@@ -21,5 +21,11 @@ async function fetchData() {
 
        // displayData   // display data function
 
-    } catch {}
+    } catch(error) {
+      console.log("Error fetching data:", error);
+    }
+}
+
+function displayData(data) {
+  const output = document.getElementById("output");
 }
