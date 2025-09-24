@@ -4,18 +4,14 @@ async function fetchData() {
     try {
 
        const cachedData = localStorage.getItem("cachedPost");    
-    } catch {
-
-    }
-}
-
-async function fetchData() {
-    try {
-
-       const cachedData = localStorage.getItem("cachedPost");    
        const cachedTime = localStorage.getItem("cachedTime");
+       const cacheExpiry = 5 * 60 * 1000; // 5 minutes
 
-       const cachedExpiry = 5 * 60 * 1000; // 5 minutes
+       if (cachedData && cachedTime && Date.now() - cachedTime < cacheExpiry) {
+        console.log("Using cached data");
+        // displayData    //  display data function
+        return
+       }
 
     } catch {}
 }
