@@ -14,6 +14,12 @@ async function fetchData() {
        }
        console.log("Fetching new data from the API...");
        const response = await fetch(API_URL);
+       const data = await response.json();
+
+       localStorage.setItem("cachedPost", JSON.stringify(data));
+       localStorage.setItem("cachedTime", Date.now().toString());
+
+       // displayData   // display data function
 
     } catch {}
 }
