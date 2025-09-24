@@ -12,6 +12,8 @@ async function fetchData() {
         // displayData    //  display data function
         return
        }
+       console.log("Fetching new data from the API...");
+       const response = await fetch(API_URL);
 
     } catch {}
 }
