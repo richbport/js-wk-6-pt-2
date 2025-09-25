@@ -28,4 +28,5 @@ async function fetchData() {
 
 function displayData(data) {
   const output = document.getElementById("output");
+  output.innerHTML = `<h3>${data.title}</h3>`
 }
