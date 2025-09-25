@@ -9,7 +9,7 @@ async function fetchData() {
 
        if (cachedData && cachedTime && Date.now() - cachedTime < cacheExpiry) {
         console.log("Using cached data");
-        // displayData    //  display data function
+        displayData(JSON.parse(cachedData));    //  display data function
         return
        }
        console.log("Fetching new data from the API...");
@@ -19,7 +19,7 @@ async function fetchData() {
        localStorage.setItem("cachedPost", JSON.stringify(data));
        localStorage.setItem("cachedTime", Date.now().toString());
 
-       // displayData   // display data function
+       displayData()   // display data function
 
     } catch(error) {
       console.log("Error fetching data:", error);
@@ -28,5 +28,5 @@ async function fetchData() {
 
 function displayData(data) {
   const output = document.getElementById("output");
-  output.innerHTML = `<h3>${data.title}</h3>`
+  output.innerHTML = `<h3>${data.title}</h3><p>${data.body}</p>`
 }
