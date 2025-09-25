@@ -20,7 +20,7 @@ async function fetchData() {
 
     displayData(data); // display data function
   } catch (error) {
-    console.log("Error fetching data:", error);
+    console.error("Error fetching data:", error);
   }
 }
 
