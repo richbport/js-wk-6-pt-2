@@ -19,14 +19,15 @@ async function fetchData() {
        localStorage.setItem("cachedPost", JSON.stringify(data));
        localStorage.setItem("cachedTime", Date.now().toString());
 
-       displayData()   // display data function
-
-    } catch(error) {
+       displayData(data);   // display data function
+    } catch (error) {
       console.log("Error fetching data:", error);
     }
 }
 
 function displayData(data) {
   const output = document.getElementById("output");
-  output.innerHTML = `<h3>${data.title}</h3><p>${data.body}</p>`
+  output.innerHTML = `<h3>${data.title}</h3><p>${data.body}</p>`;
 }
+
+document.addEventListener("DOMContentLoaded", fetchData);
